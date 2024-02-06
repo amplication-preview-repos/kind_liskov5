@@ -17,3 +17,35 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model BuildingProject {
+  adress       Adress?        @relation(fields: [adressId], references: [id])
+  adressId     String?
+  construction Construction[]
+  createdAt    DateTime       @default(now())
+  id           String         @id @default(cuid())
+  updatedAt    DateTime       @updatedAt
+}
+
+model Construction {
+  adress             Adress?          @relation(fields: [adressId], references: [id])
+  adressId           String?
+  buildingProjects   BuildingProject? @relation(fields: [buildingProjectsId], references: [id])
+  buildingProjectsId String?
+  createdAt          DateTime         @default(now())
+  id                 String           @id @default(cuid())
+  updatedAt          DateTime         @updatedAt
+}
+
+model Adress {
+  buildingProjects BuildingProject[]
+  city             String?
+  constructions    Construction[]
+  country          String?
+  createdAt        DateTime          @default(now())
+  id               String            @id @default(cuid())
+  postcode         String?
+  state            String?
+  streetname       String?
+  updatedAt        DateTime          @updatedAt
+}
