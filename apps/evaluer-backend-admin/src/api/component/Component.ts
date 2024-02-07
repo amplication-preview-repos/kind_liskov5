@@ -1,6 +1,6 @@
 export type Component = {
   createdAt: Date;
-  id: string;
+  id: number;
   name: string | null;
   updatedAt: Date;
 };

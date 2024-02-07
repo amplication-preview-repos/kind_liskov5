@@ -58,7 +58,7 @@ model HazardousSubstance {
 
 model Component {
   createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
+  id        Int      @id @default(autoincrement())
   name      String?
   updatedAt DateTime @updatedAt
 }
