@@ -1,9 +1,9 @@
 import { AdressWhereUniqueInput } from "../adress/AdressWhereUniqueInput";
 import { BuildingProjectWhereUniqueInput } from "../buildingProject/BuildingProjectWhereUniqueInput";
-import { StringFilter } from "../../util/StringFilter";
+import { IntFilter } from "../../util/IntFilter";
 
 export type ConstructionWhereInput = {
   adress?: AdressWhereUniqueInput;
   buildingProjects?: BuildingProjectWhereUniqueInput;
-  id?: StringFilter;
+  id?: IntFilter;
 };

@@ -5,6 +5,6 @@ export type BuildingProject = {
   adress?: Adress | null;
   construction?: Array<Construction>;
   createdAt: Date;
-  id: string;
+  id: number;
   updatedAt: Date;
 };

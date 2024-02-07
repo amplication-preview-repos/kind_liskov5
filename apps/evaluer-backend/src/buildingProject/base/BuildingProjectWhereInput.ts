@@ -15,7 +15,7 @@ import { AdressWhereUniqueInput } from "../../adress/base/AdressWhereUniqueInput
 import { ValidateNested, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 import { ConstructionListRelationFilter } from "../../construction/base/ConstructionListRelationFilter";
-import { StringFilter } from "../../util/StringFilter";
+import { IntFilter } from "../../util/IntFilter";
 
 @InputType()
 class BuildingProjectWhereInput {
@@ -45,14 +45,14 @@ class BuildingProjectWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringFilter,
+    type: IntFilter,
   })
-  @Type(() => StringFilter)
+  @Type(() => IntFilter)
   @IsOptional()
-  @Field(() => StringFilter, {
+  @Field(() => IntFilter, {
     nullable: true,
   })
-  id?: StringFilter;
+  id?: IntFilter;
 }
 
 export { BuildingProjectWhereInput as BuildingProjectWhereInput };

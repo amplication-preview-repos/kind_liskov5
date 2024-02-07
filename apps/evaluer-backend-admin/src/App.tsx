@@ -21,6 +21,14 @@ import { AdressList } from "./adress/AdressList";
 import { AdressCreate } from "./adress/AdressCreate";
 import { AdressEdit } from "./adress/AdressEdit";
 import { AdressShow } from "./adress/AdressShow";
+import { HazardousSubstanceList } from "./hazardousSubstance/HazardousSubstanceList";
+import { HazardousSubstanceCreate } from "./hazardousSubstance/HazardousSubstanceCreate";
+import { HazardousSubstanceEdit } from "./hazardousSubstance/HazardousSubstanceEdit";
+import { HazardousSubstanceShow } from "./hazardousSubstance/HazardousSubstanceShow";
+import { ComponentList } from "./component/ComponentList";
+import { ComponentCreate } from "./component/ComponentCreate";
+import { ComponentEdit } from "./component/ComponentEdit";
+import { ComponentShow } from "./component/ComponentShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -74,6 +82,20 @@ const App = (): React.ReactElement => {
           edit={AdressEdit}
           create={AdressCreate}
           show={AdressShow}
+        />
+        <Resource
+          name="HazardousSubstance"
+          list={HazardousSubstanceList}
+          edit={HazardousSubstanceEdit}
+          create={HazardousSubstanceCreate}
+          show={HazardousSubstanceShow}
+        />
+        <Resource
+          name="Component"
+          list={ComponentList}
+          edit={ComponentEdit}
+          create={ComponentCreate}
+          show={ComponentShow}
         />
       </Admin>
     </div>

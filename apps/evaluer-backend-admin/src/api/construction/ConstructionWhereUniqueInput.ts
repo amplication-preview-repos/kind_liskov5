@@ -1,3 +1,3 @@
 export type ConstructionWhereUniqueInput = {
-  id: string;
+  id: number;
 };

@@ -54,7 +54,7 @@ export class BuildingProjectServiceBase {
   }
 
   async findConstruction(
-    parentId: string,
+    parentId: number,
     args: Prisma.ConstructionFindManyArgs
   ): Promise<Construction[]> {
     return this.prisma.buildingProject
@@ -64,7 +64,7 @@ export class BuildingProjectServiceBase {
       .construction(args);
   }
 
-  async getAdress(parentId: string): Promise<Adress | null> {
+  async getAdress(parentId: number): Promise<Adress | null> {
     return this.prisma.buildingProject
       .findUnique({
         where: { id: parentId },

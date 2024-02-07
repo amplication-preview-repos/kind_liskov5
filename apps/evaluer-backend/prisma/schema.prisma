@@ -10,7 +10,7 @@ generator client {
 model User {
   createdAt DateTime @default(now())
   firstName String?
-  id        String   @id @default(cuid())
+  id        Int      @id @default(autoincrement())
   lastName  String?
   password  String
   roles     Json
@@ -20,20 +20,20 @@ model User {
 
 model BuildingProject {
   adress       Adress?        @relation(fields: [adressId], references: [id])
-  adressId     String?
+  adressId     Int?
   construction Construction[]
   createdAt    DateTime       @default(now())
-  id           String         @id @default(cuid())
+  id           Int            @id @default(autoincrement())
   updatedAt    DateTime       @updatedAt
 }
 
 model Construction {
   adress             Adress?          @relation(fields: [adressId], references: [id])
-  adressId           String?
+  adressId           Int?
   buildingProjects   BuildingProject? @relation(fields: [buildingProjectsId], references: [id])
-  buildingProjectsId String?
+  buildingProjectsId Int?
   createdAt          DateTime         @default(now())
-  id                 String           @id @default(cuid())
+  id                 Int              @id @default(autoincrement())
   updatedAt          DateTime         @updatedAt
 }
 
@@ -43,9 +43,22 @@ model Adress {
   constructions    Construction[]
   country          String?
   createdAt        DateTime          @default(now())
-  id               String            @id @default(cuid())
+  id               Int               @id @default(autoincrement())
   postcode         String?
   state            String?
   streetname       String?
   updatedAt        DateTime          @updatedAt
+}
+
+model HazardousSubstance {
+  createdAt DateTime @default(now())
+  id        Int      @id @default(autoincrement())
+  updatedAt DateTime @updatedAt
+}
+
+model Component {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  name      String?
+  updatedAt DateTime @updatedAt
 }

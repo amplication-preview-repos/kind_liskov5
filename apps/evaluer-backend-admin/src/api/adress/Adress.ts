@@ -7,7 +7,7 @@ export type Adress = {
   constructions?: Array<Construction>;
   country: string | null;
   createdAt: Date;
-  id: string;
+  id: number;
   postcode: string | null;
   state: string | null;
   streetname: string | null;

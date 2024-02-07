@@ -54,7 +54,7 @@ export class AdressServiceBase {
   }
 
   async findBuildingProjects(
-    parentId: string,
+    parentId: number,
     args: Prisma.BuildingProjectFindManyArgs
   ): Promise<BuildingProject[]> {
     return this.prisma.adress
@@ -65,7 +65,7 @@ export class AdressServiceBase {
   }
 
   async findConstructions(
-    parentId: string,
+    parentId: number,
     args: Prisma.ConstructionFindManyArgs
   ): Promise<Construction[]> {
     return this.prisma.adress

@@ -53,7 +53,7 @@ export class ConstructionServiceBase {
     return this.prisma.construction.delete(args);
   }
 
-  async getAdress(parentId: string): Promise<Adress | null> {
+  async getAdress(parentId: number): Promise<Adress | null> {
     return this.prisma.construction
       .findUnique({
         where: { id: parentId },
@@ -61,7 +61,7 @@ export class ConstructionServiceBase {
       .adress();
   }
 
-  async getBuildingProjects(parentId: string): Promise<BuildingProject | null> {
+  async getBuildingProjects(parentId: number): Promise<BuildingProject | null> {
     return this.prisma.construction
       .findUnique({
         where: { id: parentId },
